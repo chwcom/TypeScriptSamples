@@ -1,0 +1,557 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<fo:root xmlns:fo="http://www.w3.org/1999/XSL/Format">
+	<fo:layout-master-set>
+		<fo:simple-page-master background-color="red" master-name="first" margin-right="8mm" margin-left="8mm" margin-bottom="10mm" margin-top="10mm" page-width="297mm" page-height="210mm">
+			<fo:region-body/>
+			<fo:region-before extent="0cm"/>
+			<fo:region-after extent="0cm"/>
+		</fo:simple-page-master>
+	</fo:layout-master-set>
+	<fo:page-sequence master-reference="first" font-family="mysimsun">
+		<fo:static-content flow-name="xsl-region-before" margin-bottom="1cm">
+			<fo:block id="heardCont" margin-top="30mm"></fo:block>
+		</fo:static-content>
+		<fo:static-content flow-name="xsl-region-after">
+			<fo:block text-align="center">
+				<fo:page-number/>
+			</fo:block>
+		</fo:static-content>
+		<fo:flow flow-name="xsl-region-body">
+			<fo:block margin-left="8mm" margin-right="8mm" margin-bottom="8mm" margin-top="8mm">
+				<fo:block margin-bottom="3mm" text-align="left" font-family="mysimhei" font-weight="bold" color="black" font-size="10">
+					Credit Application Report
+				</fo:block>
+				<fo:block  text-align="left" font-family="mysimhei" font-weight="bold" color="black" font-size="9" margin-bottom="3mm" >
+					Basic information
+				</fo:block>
+				<fo:table>
+					<fo:table-body>
+						<fo:table-row>
+							<fo:table-cell number-columns-spanned="20" font-size="8"  text-align="justify" margin-left="0mm" margin-right="0mm">
+								<fo:block>Application Number:</fo:block>
+							</fo:table-cell>
+							<fo:table-cell number-columns-spanned="20" font-size="8" text-align="justify" margin-left="0mm" margin-right="0mm">
+								<fo:block id = "appno"></fo:block>
+							</fo:table-cell>
+							<fo:table-cell number-columns-spanned="1">
+								<fo:block ></fo:block>
+							</fo:table-cell>
+							<fo:table-cell number-columns-spanned="15" font-size="8" text-align="justify" margin-left="0mm" margin-right="0mm">
+								<fo:block >Application Date:</fo:block>
+							</fo:table-cell>
+							<fo:table-cell number-columns-spanned="15" font-size="8" text-align="justify" margin-left="0mm" margin-right="0mm">
+								<fo:block id="appdate"></fo:block>
+							</fo:table-cell>
+							<fo:table-cell number-columns-spanned="1">
+								<fo:block ></fo:block>
+							</fo:table-cell>
+							<fo:table-cell number-columns-spanned="10" font-size="8" text-align="justify" margin-left="0mm" margin-right="0mm">
+								<fo:block >Marketing Unit:</fo:block>
+							</fo:table-cell>
+							<fo:table-cell number-columns-spanned="27" font-size="8" text-align="justify" margin-left="0mm" margin-right="0mm">
+								<fo:block id="marketingunit"></fo:block>
+							</fo:table-cell>
+						</fo:table-row>
+						<fo:table-row>
+							<fo:table-cell number-columns-spanned="20" font-size="8" text-align="justify" margin-left="0mm" margin-right="0mm">
+								<fo:block>Type of Credit Application:</fo:block>
+							</fo:table-cell>
+							<fo:table-cell number-columns-spanned="20" font-size="8" text-align="justify" margin-left="0mm" margin-right="0mm">
+								<fo:block id = "CreditApplication"></fo:block>
+							</fo:table-cell>
+						</fo:table-row>
+					</fo:table-body>
+				</fo:table>
+				<fo:block  text-align="left" font-family="mysimhei" font-weight="bold" color="black" font-size="9" margin-top="5mm" margin-bottom="5mm" >
+					Customer <![CDATA[ & ]]> Application Background
+				</fo:block>
+				<fo:block  text-align="left" font-family="mysimhei" font-weight="bold" color="black" font-size="9" margin-bottom="5mm" >
+					Borrower
+				</fo:block>
+				<fo:table id="table_borrower">
+					<fo:table-header>
+						<fo:table-cell font-size="8" text-align="left" border-style="solid" margin-left="0mm" margin-right="0mm">
+							<fo:block>Customer English Name</fo:block>
+						</fo:table-cell>
+						<fo:table-cell font-size="8" text-align="left" border-style="solid" margin-left="0mm" margin-right="0mm">
+							<fo:block>Customer Chinese Name</fo:block>
+						</fo:table-cell>
+						<fo:table-cell font-size="8" text-align="left" border-style="solid" margin-left="0mm" margin-right="0mm">
+							<fo:block>T24 Customer ID</fo:block>
+						</fo:table-cell>
+						<fo:table-cell font-size="8" text-align="left" border-style="solid" margin-left="0mm" margin-right="0mm">
+							<fo:block>CAAS Customer ID</fo:block>
+						</fo:table-cell>
+                        <fo:table-cell font-size="8" text-align="left" border-style="solid" margin-left="0mm" margin-right="0mm">
+							<fo:block>Obligor Rating</fo:block>
+						</fo:table-cell>
+                        <fo:table-cell font-size="8" text-align="left" border-style="solid" margin-left="0mm" margin-right="0mm">
+							<fo:block>Credit Risk Rating</fo:block>
+						</fo:table-cell>
+                        <fo:table-cell font-size="8" text-align="left" border-style="solid" margin-left="0mm" margin-right="0mm">
+							<fo:block>Loan Class</fo:block>
+						</fo:table-cell>
+                        <fo:table-cell font-size="8" text-align="left" border-style="solid" margin-left="0mm" margin-right="0mm">
+							<fo:block>Comply With Large Exposure Limit</fo:block>
+						</fo:table-cell>
+                        <fo:table-cell font-size="8" text-align="left" border-style="solid" margin-left="0mm" margin-right="0mm">
+							<fo:block>Comply With Large Exposure Limit</fo:block>
+						</fo:table-cell>
+						<fo:table-cell font-size="8" text-align="left" border-style="solid" margin-left="0mm" margin-right="0mm">
+							<fo:block>Facility Granted By CMB Branch</fo:block>
+						</fo:table-cell>
+						<fo:table-cell font-size="8" text-align="left" border-style="solid" margin-left="0mm" margin-right="0mm">
+							<fo:block>Facility Limit Granted By CMB</fo:block>
+						</fo:table-cell>
+						<fo:table-cell font-size="8" text-align="left" border-style="solid" margin-left="0mm" margin-right="0mm">
+							<fo:block>Collateral Related To CMB Facility</fo:block>
+						</fo:table-cell>
+						<fo:table-cell font-size="8" text-align="left" border-style="solid" margin-left="0mm" margin-right="0mm">
+							<fo:block>Company Type for FATCA</fo:block>
+						</fo:table-cell>
+					</fo:table-header>
+					<fo:table-body>
+						<fo:table-row>
+							<fo:table-cell font-size="8" text-align="left" border-style="solid" margin-left="0mm" margin-right="0mm">
+							</fo:table-cell>
+							<fo:table-cell font-size="8" text-align="left" border-style="solid" margin-left="0mm" margin-right="0mm">
+							</fo:table-cell>
+							<fo:table-cell font-size="8" text-align="left" border-style="solid" margin-left="0mm" margin-right="0mm">
+							</fo:table-cell>
+							<fo:table-cell font-size="8" text-align="left" border-style="solid" margin-left="0mm" margin-right="0mm">
+							</fo:table-cell>
+							<fo:table-cell font-size="8" text-align="left" border-style="solid" margin-left="0mm" margin-right="0mm">
+							</fo:table-cell>
+							<fo:table-cell font-size="8" text-align="left" border-style="solid" margin-left="0mm" margin-right="0mm">
+							</fo:table-cell>
+							<fo:table-cell font-size="8" text-align="left" border-style="solid" margin-left="0mm" margin-right="0mm">
+							</fo:table-cell>
+                            <fo:table-cell font-size="8" text-align="left" border-style="solid" margin-left="0mm" margin-right="0mm">
+							</fo:table-cell>
+                            <fo:table-cell font-size="8" text-align="left" border-style="solid" margin-left="0mm" margin-right="0mm">
+							</fo:table-cell>
+                            <fo:table-cell font-size="8" text-align="left" border-style="solid" margin-left="0mm" margin-right="0mm">
+							</fo:table-cell>
+                            <fo:table-cell font-size="8" text-align="left" border-style="solid" margin-left="0mm" margin-right="0mm">
+							</fo:table-cell>
+                            <fo:table-cell font-size="8" text-align="left" border-style="solid" margin-left="0mm" margin-right="0mm">
+							</fo:table-cell>
+							<fo:table-cell font-size="8" text-align="left" border-style="solid" margin-left="0mm" margin-right="0mm">
+							</fo:table-cell>
+						</fo:table-row>
+					</fo:table-body>
+				</fo:table>
+				<fo:block  text-align="left" font-family="mysimhei" font-weight="bold" color="black" font-size="9"  margin-top="5mm"  margin-bottom="5mm" >
+					Guarantor
+				</fo:block>
+				<fo:table id="table_guarantor">
+					<fo:table-header>
+						<fo:table-cell font-size="8" text-align="left" border-style="solid" margin-left="0mm" margin-right="0mm">
+							<fo:block>Customer English Name</fo:block>
+						</fo:table-cell>
+						<fo:table-cell font-size="8" text-align="left" border-style="solid" margin-left="0mm" margin-right="0mm">
+							<fo:block>Customer Chinese Name</fo:block>
+						</fo:table-cell>
+						<fo:table-cell font-size="8" text-align="left" border-style="solid" margin-left="0mm" margin-right="0mm">
+							<fo:block>T24 Customer ID</fo:block>
+						</fo:table-cell>
+						<fo:table-cell font-size="8" text-align="left" border-style="solid" margin-left="0mm" margin-right="0mm">
+							<fo:block>CAAS Customer ID</fo:block>
+						</fo:table-cell>
+					</fo:table-header>
+					<fo:table-body>
+						<fo:table-row>
+							<fo:table-cell font-size="8" text-align="left" border-style="solid" margin-left="0mm" margin-right="0mm">
+							</fo:table-cell>
+							<fo:table-cell font-size="8" text-align="left" border-style="solid" margin-left="0mm" margin-right="0mm">
+							</fo:table-cell>
+							<fo:table-cell font-size="8" text-align="left" border-style="solid" margin-left="0mm" margin-right="0mm">
+							</fo:table-cell>
+							<fo:table-cell font-size="8" text-align="left" border-style="solid" margin-left="0mm" margin-right="0mm">
+							</fo:table-cell>
+						</fo:table-row>
+					</fo:table-body>
+				</fo:table>
+				<fo:block  text-align="left" font-family="mysimhei" font-weight="bold" color="black" font-size="9"  margin-top="5mm"  margin-bottom="5mm" >
+					Facility Information
+				</fo:block>
+				<fo:table id="table_facility">
+					<fo:table-body>
+						<fo:table-row>
+							<fo:table-cell font-size="8" text-align="left"  margin-left="0mm" margin-right="0mm">
+							</fo:table-cell>
+						</fo:table-row>
+					</fo:table-body>
+				</fo:table>
+				<fo:block  text-align="left" font-family="mysimhei" font-weight="bold" color="black" font-size="9" margin-top="5mm" margin-bottom="00mm" >
+					Collateral Information
+				</fo:block>
+				<fo:table id="table_collateral">
+					<fo:table-body>
+						<fo:table-row>
+							<fo:table-cell font-size="8" text-align="left" margin-left="0mm" margin-right="0mm">
+							</fo:table-cell>
+						</fo:table-row>	
+					</fo:table-body>
+				</fo:table>
+				<fo:block  text-align="left" font-family="mysimhei" font-weight="bold" color="black" font-size="9" margin-top="5mm" margin-bottom="00mm" >
+					Guarantee Information
+				</fo:block>
+				<fo:table id="table_guarantee">
+					<fo:table-body>
+						<fo:table-row>
+							<fo:table-cell font-size="8"  text-align="left" margin-left="0mm" margin-right="0mm">
+							</fo:table-cell>
+						</fo:table-row>
+					</fo:table-body>
+				</fo:table>
+				<fo:block  text-align="left" font-family="mysimhei" font-weight="bold" color="black" font-size="9" margin-top="5mm" margin-bottom="00mm" >
+					Miscellaneous conditions/undertakings 
+				</fo:block>	
+				<fo:table id="table_maintenance">
+					<fo:table-body>
+						<fo:table-row> 
+							<fo:table-cell font-size="8"  text-align="left" margin-left="0mm" margin-right="0mm">  
+							</fo:table-cell> 	
+						</fo:table-row> 
+					</fo:table-body>
+				</fo:table> 	 		
+				<fo:block  text-align="left" font-family="mysimhei" font-weight="bold" color="black" font-size="9" margin-top="5mm" margin-bottom="5mm" >
+					Account Gross Income And Cross-selling Information
+				</fo:block>
+				<fo:table id="table_crossSelling">
+					<fo:table-header>
+						<fo:table-cell font-size="8" text-align="left" border-style="solid" margin-left="0mm" margin-right="0mm">
+							<fo:block>Customer English Name</fo:block>
+						</fo:table-cell>
+						<fo:table-cell font-size="8" text-align="left" border-style="solid" margin-left="0mm" margin-right="0mm">
+							<fo:block>T24 Customer ID</fo:block>
+						</fo:table-cell>
+						<fo:table-cell font-size="8" text-align="left" border-style="solid" margin-left="0mm" margin-right="0mm">
+							<fo:block>CAAS Customer ID</fo:block>
+						</fo:table-cell>
+						<fo:table-cell font-size="8" text-align="left" border-style="solid" margin-left="0mm" margin-right="0mm">
+							<fo:block>Pledged Deposit</fo:block>
+						</fo:table-cell>
+						<fo:table-cell font-size="8" text-align="left" border-style="solid" margin-left="0mm" margin-right="0mm">
+							<fo:block>Free Deposit</fo:block>
+						</fo:table-cell>
+						<fo:table-cell font-size="8" text-align="left" border-style="solid" margin-left="0mm" margin-right="0mm">
+							<fo:block>Other Free Assets</fo:block>
+						</fo:table-cell>
+						<fo:table-cell font-size="8" text-align="left" border-style="solid" margin-left="0mm" margin-right="0mm">
+							<fo:block>Last 12 Months Gross Income (Interest)</fo:block>
+						</fo:table-cell>
+						<fo:table-cell font-size="8" text-align="left" border-style="solid" margin-left="0mm" margin-right="0mm">
+							<fo:block>Last 12 Months Gross Income (Fee)</fo:block>
+						</fo:table-cell>
+						<fo:table-cell font-size="8" text-align="left" border-style="solid" margin-left="0mm" margin-right="0mm">
+							<fo:block>Estimated Coming 12 Months Gross Income (Interest)</fo:block>
+						</fo:table-cell>
+						<fo:table-cell font-size="8" text-align="left" border-style="solid" margin-left="0mm" margin-right="0mm">
+							<fo:block>Estimated Coming 12 Months Gross Income (Fee)</fo:block>
+						</fo:table-cell>
+					</fo:table-header>
+					<fo:table-body>
+						<fo:table-row>
+							<fo:table-cell font-size="8" text-align="left" border-style="solid" margin-left="0mm" margin-right="0mm">
+							</fo:table-cell>
+							<fo:table-cell font-size="8" text-align="left" border-style="solid" margin-left="0mm" margin-right="0mm">
+							</fo:table-cell>
+							<fo:table-cell font-size="8" text-align="left" border-style="solid" margin-left="0mm" margin-right="0mm">
+							</fo:table-cell>
+							<fo:table-cell font-size="8" text-align="left" border-style="solid" margin-left="0mm" margin-right="0mm">
+							</fo:table-cell>
+							<fo:table-cell font-size="8" text-align="left" border-style="solid" margin-left="0mm" margin-right="0mm">
+							</fo:table-cell>
+							<fo:table-cell font-size="8" text-align="left" border-style="solid" margin-left="0mm" margin-right="0mm">
+							</fo:table-cell>
+							<fo:table-cell font-size="8" text-align="left" border-style="solid" margin-left="0mm" margin-right="0mm">
+							</fo:table-cell>
+							<fo:table-cell font-size="8" text-align="left" border-style="solid" margin-left="0mm" margin-right="0mm">
+							</fo:table-cell>
+							<fo:table-cell font-size="8" text-align="left" border-style="solid" margin-left="0mm" margin-right="0mm">
+							</fo:table-cell>
+							<fo:table-cell font-size="8" text-align="left" border-style="solid" margin-left="0mm" margin-right="0mm">
+							</fo:table-cell>
+						</fo:table-row>
+					</fo:table-body>
+				</fo:table>
+				<fo:block  text-align="left" font-family="mysimhei" font-weight="bold" color="black" font-size="9" margin-top="5mm" margin-bottom="5mm" >
+					General Description Of Application Information
+				</fo:block>
+				<fo:block  text-align="left" font-family="mysimhei" font-weight="bold" color="black" font-size="8" margin-top="5mm" margin-bottom="0mm" >
+					Source Of Fund
+				</fo:block>
+				<fo:block>￣￣￣￣￣</fo:block>
+				<fo:block id="fund" text-align="justify"  font-size="8" margin-top="1mm" margin-bottom="5mm" >
+				</fo:block>
+				<fo:block  text-align="left" font-family="mysimhei" font-weight="bold" color="black" font-size="8" margin-top="5mm" margin-bottom="0mm" >
+					Source Of Repayment / Repayment Ability
+				</fo:block>
+				<fo:block>￣￣￣￣￣￣￣￣￣￣￣￣￣</fo:block>
+				<fo:block id="repayment" text-align="justify"  font-size="8" margin-top="1mm" margin-bottom="5mm" >
+				</fo:block>
+				<fo:block  text-align="left" font-family="mysimhei" font-weight="bold" color="black" font-size="8" margin-top="5mm" margin-bottom="0mm" >
+					Letter Of Comfort / Undertaking (If Any)
+				</fo:block>
+				<fo:block>￣￣￣￣￣￣￣￣￣￣￣￣￣</fo:block>
+				<fo:block id="comfort" text-align="justify"  font-size="8" margin-top="1mm" margin-bottom="5mm" >
+				</fo:block>
+				<fo:block  text-align="left" font-family="mysimhei" font-weight="bold" color="black" font-size="8" margin-top="5mm" margin-bottom="0mm" >
+					Industry Analysis
+				</fo:block>
+				<fo:block>￣￣￣￣￣￣</fo:block>
+				<fo:block id="industry" text-align="justify"  font-size="8" margin-top="1mm" margin-bottom="5mm" >
+				</fo:block>
+				<fo:block  text-align="left" font-family="mysimhei" font-weight="bold" color="black" font-size="8" margin-top="5mm" margin-bottom="0mm" >
+					Cash Flow Analysis / Cash Flow Forecast / Stress Test
+				</fo:block>
+				<fo:block>￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣</fo:block>
+				<fo:block id="stresstest" text-align="justify"  font-size="8" margin-top="1mm" margin-bottom="5mm" >
+				</fo:block>
+				<fo:block  text-align="left" font-family="mysimhei" font-weight="bold" color="black" font-size="8" margin-top="5mm" margin-bottom="0mm" >
+					Justification Of Obligor Limit / Risk Adjusted Limit / Model Pricing Deviation (If Any)
+				</fo:block>
+				<fo:block>￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣</fo:block>
+				<fo:block id="obligorLimit" text-align="justify"  font-size="8" margin-top="1mm" margin-bottom="5mm" >
+				</fo:block>
+				<fo:block  text-align="left" font-family="mysimhei" font-weight="bold" color="black" font-size="9" margin-top="5mm" margin-bottom="5mm" >
+					RAROC Information
+				</fo:block>
+				<fo:table>
+					<fo:table-body>
+						<fo:table-row>
+							<fo:table-cell border-style="solid" number-columns-spanned="20" font-size="8"  text-align="left" margin-left="0mm" margin-right="0mm">
+								<fo:block>RAROC Application No:</fo:block>
+							</fo:table-cell>
+							<fo:table-cell border-style="solid" number-columns-spanned="20" font-size="8" text-align="left" margin-left="0mm" margin-right="0mm">
+								<fo:block id = "rarocappno"></fo:block>
+							</fo:table-cell>
+							<fo:table-cell number-columns-spanned="1">
+								<fo:block ></fo:block>
+							</fo:table-cell>
+							<fo:table-cell border-style="solid" number-columns-spanned="25" font-size="8" text-align="left" margin-left="0mm" margin-right="0mm">
+								<fo:block >RAROC Application Status:</fo:block>
+							</fo:table-cell>
+							<fo:table-cell border-style="solid" number-columns-spanned="19" font-size="8" text-align="left" margin-left="0mm" margin-right="0mm">
+								<fo:block id="rarocappstatus"></fo:block>
+							</fo:table-cell>
+							<fo:table-cell number-columns-spanned="1">
+								<fo:block ></fo:block>
+							</fo:table-cell>
+							<fo:table-cell border-style="solid" number-columns-spanned="15" font-size="8" text-align="left" margin-left="0mm" margin-right="0mm">
+								<fo:block >Require FMD Approve:</fo:block>
+							</fo:table-cell>
+							<fo:table-cell border-style="solid" number-columns-spanned="8" font-size="8" text-align="left" margin-left="0mm" margin-right="0mm">
+								<fo:block id="fmdapprove"></fo:block>
+							</fo:table-cell>
+						</fo:table-row>
+						<fo:table-row>
+							<fo:table-cell border-style="solid" number-columns-spanned="20" font-size="8" text-align="left" margin-left="0mm" margin-right="0mm">
+								<fo:block>Adjusted RAROC under IRB</fo:block>
+							</fo:table-cell>
+							<fo:table-cell border-style="solid" number-columns-spanned="20" font-size="8" text-align="left" margin-left="0mm" margin-right="0mm">
+								<fo:block id = "rarocunderirb"></fo:block>
+							</fo:table-cell>
+							<fo:table-cell number-columns-spanned="1">
+								<fo:block ></fo:block>
+							</fo:table-cell>
+							<fo:table-cell border-style="solid" number-columns-spanned="25" font-size="8" text-align="left" margin-left="0mm" margin-right="0mm">
+								<fo:block >Adjusted RAROC under Standardized</fo:block>
+							</fo:table-cell>
+							<fo:table-cell border-style="solid" number-columns-spanned="19" font-size="8"  text-align="left" margin-left="0mm" margin-right="0mm">
+								<fo:block id="standardized"></fo:block>
+							</fo:table-cell>
+						</fo:table-row>
+						<fo:table-row>
+							<fo:table-cell border-style="solid" number-columns-spanned="20" font-size="8" text-align="left" margin-left="0mm" margin-right="0mm">
+								<fo:block >IRB RAROC Level 1</fo:block>
+							</fo:table-cell>
+							<fo:table-cell border-style="solid" number-columns-spanned="20" font-size="8" text-align="left" margin-left="0mm" margin-right="0mm">
+								<fo:block id="raroclevel1"></fo:block>
+							</fo:table-cell>
+							<fo:table-cell number-columns-spanned="1">
+								<fo:block ></fo:block>
+							</fo:table-cell>
+							<fo:table-cell  border-style="solid" number-columns-spanned="25" font-size="8" text-align="left" margin-left="0mm" margin-right="0mm">
+								<fo:block >Standardized RAROC Level 1</fo:block>
+							</fo:table-cell>
+							<fo:table-cell border-style="solid" number-columns-spanned="19" font-size="8"  text-align="left" margin-left="0mm" margin-right="0mm">
+								<fo:block id="standlevel1"></fo:block>
+							</fo:table-cell>
+						</fo:table-row>
+						<fo:table-row>
+							<fo:table-cell border-style="solid" number-columns-spanned="20" font-size="8" text-align="left" margin-left="0mm" margin-right="0mm">
+								<fo:block >IRB RAROC Level 2</fo:block>
+							</fo:table-cell>
+							<fo:table-cell border-style="solid" number-columns-spanned="20" font-size="8" text-align="left" margin-left="0mm" margin-right="0mm">
+								<fo:block id="raroclevel2"></fo:block>
+							</fo:table-cell>
+							<fo:table-cell number-columns-spanned="1">
+								<fo:block ></fo:block>
+							</fo:table-cell>
+							<fo:table-cell  border-style="solid" number-columns-spanned="25" font-size="8" text-align="left" margin-left="0mm" margin-right="0mm">
+								<fo:block >Standardized RAROC Level 2</fo:block>
+							</fo:table-cell>
+							<fo:table-cell border-style="solid" number-columns-spanned="19" font-size="8"  text-align="left" margin-left="0mm" margin-right="0mm">
+								<fo:block id="standlevel2"></fo:block>
+							</fo:table-cell>
+						</fo:table-row>
+						<fo:table-row>
+							<fo:table-cell border-style="solid" number-columns-spanned="20" font-size="8" text-align="left" margin-left="0mm" margin-right="0mm">
+								<fo:block >IRB RAROC Level 3</fo:block>
+							</fo:table-cell>
+							<fo:table-cell border-style="solid" number-columns-spanned="20" font-size="8" text-align="left" margin-left="0mm" margin-right="0mm">
+								<fo:block id="raroclevel3"></fo:block>
+							</fo:table-cell>
+							<fo:table-cell number-columns-spanned="1">
+								<fo:block ></fo:block>
+							</fo:table-cell>
+							<fo:table-cell border-style="solid" number-columns-spanned="25" font-size="8" text-align="left" margin-left="0mm" margin-right="0mm">
+								<fo:block >Standardized RAROC Level 3</fo:block>
+							</fo:table-cell>
+							<fo:table-cell border-style="solid" number-columns-spanned="19" font-size="8"  text-align="left" margin-left="0mm" margin-right="0mm">
+								<fo:block id="standlevel3"></fo:block>
+							</fo:table-cell>
+						</fo:table-row>
+					</fo:table-body>
+				</fo:table>
+				<fo:block  text-align="left" font-family="mysimhei" font-weight="bold" color="black" font-size="9" margin-top="5mm" margin-bottom="00mm" > 
+					Business  Analysis
+				</fo:block>
+				<fo:block  text-align="left" font-family="mysimhei" font-weight="bold" color="black" font-size="8" margin-top="5mm" margin-bottom="00mm" >
+					Borrower's Background and Nature of Business
+				</fo:block>	
+				<fo:block>￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣</fo:block> 
+				<fo:block id="background" text-align="justify"  font-size="8" margin-top="1mm" margin-bottom="5mm" ></fo:block> 
+				<fo:block  text-align="left" font-family="mysimhei" font-weight="bold" color="black" font-size="8" margin-top="5mm" margin-bottom="00mm" > 
+					Line of Business
+				</fo:block>	
+				<fo:block>￣￣￣￣￣</fo:block>
+				<fo:block id="lineofbusiness" text-align="justify"  font-size="8" margin-top="1mm" margin-bottom="5mm" ></fo:block> 
+				<fo:block  text-align="left" font-family="mysimhei" font-weight="bold" color="black" font-size="8" margin-top="5mm" margin-bottom="00mm" > 
+					Key Management/ Experience
+				</fo:block>
+				<fo:block>￣￣￣￣￣￣￣￣￣</fo:block>
+				<fo:block id="keymanagement" text-align="justify"  font-size="8" margin-top="1mm" margin-bottom="5mm" ></fo:block>	
+				<fo:block  text-align="left" font-family="mysimhei" font-weight="bold" color="black" font-size="8" margin-top="5mm" margin-bottom="00mm" >
+					Products/Goods
+				</fo:block>	
+				<fo:block>￣￣￣￣￣</fo:block>
+				<fo:block id="products" text-align="justify"  font-size="8" margin-top="1mm" margin-bottom="5mm" ></fo:block>	  
+				<fo:block  text-align="left" font-family="mysimhei" font-weight="bold" color="black" font-size="8" margin-top="5mm" margin-bottom="00mm" > 
+				  Major Suppliers/Countries/ Payment Mode
+				</fo:block>
+				<fo:block>￣￣￣￣￣￣￣￣￣￣￣￣￣</fo:block>
+				<fo:block id="majorsupplier" text-align="justify"  font-size="8" margin-top="1mm" margin-bottom="5mm" ></fo:block>
+				<fo:block  text-align="left" font-family="mysimhei" font-weight="bold" color="black" font-size="8" margin-top="5mm" margin-bottom="00mm" >
+					Major Buyers/Countries/Receivables collection Method    
+				</fo:block> 
+				<fo:block>￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣</fo:block>
+				<fo:block id="majorbuyers" text-align="justify"  font-size="8" margin-top="1mm" margin-bottom="5mm" ></fo:block>
+				<fo:block  text-align="left" font-family="mysimhei" font-weight="bold" color="black" font-size="8" margin-top="5mm" margin-bottom="00mm" > 
+					Supplier Evidence Document Uploaded
+				</fo:block> 	
+				<fo:block>￣￣￣￣￣￣￣￣￣￣￣￣</fo:block>
+				<fo:block id="supplieruploaded" text-align="justify"  font-size="8" margin-top="1mm" margin-bottom="5mm" ></fo:block>
+				<fo:block  text-align="left" font-family="mysimhei" font-weight="bold" color="black" font-size="8" margin-top="5mm" margin-bottom="00mm" > 
+					Visit Report
+				</fo:block>
+				<fo:block>￣￣￣￣</fo:block>
+				<fo:block id="visitreport" text-align="justify"  font-size="8" margin-top="1mm" margin-bottom="5mm" ></fo:block> 
+				<fo:block  text-align="left" font-family="mysimhei" font-weight="bold" color="black" font-size="8" margin-top="5mm" margin-bottom="00mm" > 
+					Outstanding Litigation(s)
+				</fo:block>
+				<fo:block>￣￣￣￣￣￣￣￣</fo:block>	
+				<fo:block id="outstanding" text-align="justify"  font-size="8" margin-top="1mm" margin-bottom="5mm" ></fo:block>
+				<fo:block  text-align="left" font-family="mysimhei" font-weight="bold" color="black" font-size="8" margin-top="5mm" margin-bottom="00mm" >
+					Due Diligence / Other Credit Checkings
+				</fo:block> 
+				<fo:block>￣￣￣￣￣￣￣￣￣￣￣￣￣</fo:block>	
+				<fo:block id="duediligence" text-align="justify"  font-size="8" margin-top="1mm" margin-bottom="5mm" ></fo:block>
+				<fo:block  text-align="left" font-family="mysimhei" font-weight="bold" color="black" font-size="8" margin-top="5mm" margin-bottom="00mm" >
+					Substantial deviation in our financing tenor vs. the borrower's net trade cycle as stipulated on our financial analysis
+				</fo:block>	
+				<fo:block>￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣</fo:block>	
+				<fo:block id="financialanalysis" text-align="justify"  font-size="8" margin-top="1mm" margin-bottom="5mm" ></fo:block> 
+				<fo:block  text-align="left" font-family="mysimhei" font-weight="bold" color="black" font-size="8" margin-top="5mm" margin-bottom="00mm" >
+					Comments on the obligor/credit risk rating if System generates a weak score
+				</fo:block>	
+				<fo:block>￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣</fo:block>		
+				<fo:block id="comments" text-align="justify"  font-size="8" margin-top="1mm" margin-bottom="5mm" ></fo:block> 
+				<fo:block  text-align="left" font-family="mysimhei" font-weight="bold" color="black" font-size="8" margin-top="5mm" margin-bottom="00mm" >
+				  Comments and justification if the Borrower's risk adjusted limit is smaller than the proposed facility limit the obligor/credit risk rating if System generates a weak score
+				</fo:block>	
+				<fo:block>￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣</fo:block>	
+				<fo:block id="justification" text-align="justify"  font-size="8" margin-top="1mm" margin-bottom="5mm" ></fo:block>
+				<fo:block  text-align="left" font-family="mysimhei" font-weight="bold" color="black" font-size="8" margin-top="5mm" margin-bottom="00mm" > 
+					Comments and justification if the proposed pricing is lower than the model pricing generated by System in the Use of Rating Worksheet
+				</fo:block>	
+				<fo:block>￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣</fo:block>	
+				<fo:block id="proposedpricing" text-align="justify"  font-size="8" margin-top="1mm" margin-bottom="5mm" ></fo:block> 
+				<fo:block  text-align="left" font-family="mysimhei" font-weight="bold" color="black" font-size="9" margin-top="5mm" margin-bottom="00mm" > 
+					Other Information	  
+				</fo:block>	
+				<fo:block  text-align="left" font-family="mysimhei" font-weight="bold" color="black" font-size="8" margin-top="5mm" margin-bottom="00mm" >
+					Project Finance Cashflow Prediction	
+				</fo:block>	
+				<fo:block>￣￣￣￣￣￣￣￣￣￣￣￣</fo:block>
+				<fo:block id="projectprediction" text-align="justify"  font-size="8" margin-top="1mm" margin-bottom="5mm" ></fo:block>
+				<fo:block  text-align="left" font-family="mysimhei" font-weight="bold" color="black" font-size="8" margin-top="5mm" margin-bottom="00mm" >
+					Cash flow analysis for project finance or loans with loan tenor exceeding 1 year 
+				</fo:block>	
+				<fo:block>￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣</fo:block>	 
+				<fo:block id="cashflowanalysis" text-align="justify"  font-size="8" margin-top="1mm" margin-bottom="5mm" ></fo:block>
+				<fo:block  text-align="left" font-family="mysimhei" font-weight="bold" color="black" font-size="8" margin-top="5mm" margin-bottom="00mm" > 
+				  Stress Test on interest rate (3% at present) is added for project finance or loans (including instalment loans) with loan tenor exceeding 1 year)
+				</fo:block> 
+				<fo:block>￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣</fo:block>	
+				<fo:block id="stress1year" text-align="justify"  font-size="8" margin-top="1mm" margin-bottom="5mm" ></fo:block> 
+				<fo:block  text-align="left" font-family="mysimhei" font-weight="bold" color="black" font-size="8" margin-top="5mm" margin-bottom="00mm" >
+					New Business Developments (if any)
+				</fo:block>
+				<fo:block>￣￣￣￣￣￣￣￣￣￣￣</fo:block>	
+				<fo:block id="newbusiness" text-align="justify"  font-size="8" margin-top="1mm" margin-bottom="5mm" ></fo:block>
+				<fo:block  text-align="left" font-family="mysimhei" font-weight="bold" color="black" font-size="8" margin-top="5mm" margin-bottom="00mm" >
+					Facilities enjoyed with other banks
+				</fo:block>	
+				<fo:block>￣￣￣￣￣￣￣￣￣￣￣￣</fo:block>
+				<fo:block id="facilities" text-align="justify"  font-size="8" margin-top="1mm" margin-bottom="5mm" ></fo:block>
+				<fo:block  text-align="left" font-family="mysimhei" font-weight="bold" color="black" font-size="9" margin-top="5mm" margin-bottom="00mm" >  
+					Other Analysis
+				</fo:block>	
+				<fo:block  text-align="left" font-family="mysimhei" font-weight="bold" color="black" font-size="8" margin-top="5mm" margin-bottom="00mm" > 
+					Credit Risk Analysis 
+				</fo:block>
+				<fo:block>￣￣￣￣￣￣￣</fo:block>		
+				<fo:block id="creidtriskanalysis" text-align="justify"  font-size="8" margin-top="1mm" margin-bottom="5mm" ></fo:block>
+				<fo:block  text-align="left" font-family="mysimhei" font-weight="bold" color="black" font-size="8" margin-top="5mm" margin-bottom="00mm" >
+					Overall Contribution to Bank/Cross-selling details  
+				</fo:block>	  
+				<fo:block>￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣</fo:block>	
+				<fo:block id="contribution" text-align="justify"  font-size="8" margin-top="1mm" margin-bottom="5mm" ></fo:block>  
+				<fo:block  text-align="left" font-family="mysimhei" font-weight="bold" color="black" font-size="9" margin-top="5mm" margin-bottom="00mm" >  
+					Conclusion
+				</fo:block>	
+				<fo:block  text-align="left" font-family="mysimhei" font-weight="bold" color="black" font-size="8" margin-top="5mm" margin-bottom="00mm" > 
+					Justification/Conclusion  
+				</fo:block>	
+				<fo:block>￣￣￣￣￣￣￣￣</fo:block>	
+				<fo:block id="conclusion" text-align="justify"  font-size="8"  margin-top="1mm" margin-bottom="5mm" ></fo:block> 
+				<fo:block  text-align="left" font-family="mysimhei" font-weight="bold" color="black" font-size="9" margin-top="5mm" margin-bottom="00mm" >
+					Financial Analysis  
+				</fo:block> 
+				<fo:table id="table_financial"> 
+					<fo:table-body>	
+						<fo:table-row>
+							<fo:table-cell font-size="8"  text-align="left" margin-left="0mm" margin-right="0mm"> 
+							</fo:table-cell>
+						</fo:table-row> 	
+					</fo:table-body> 
+				</fo:table>			
+			</fo:block>    	
+		</fo:flow>
+	</fo:page-sequence>
+</fo:root>
